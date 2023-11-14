@@ -50,6 +50,12 @@ public class UserController {
 		return new ResponseEntity<User>(userService.getUserById(userId), HttpStatus.CREATED);
 	}
 
+    @GetMapping("/hello")
+	public ResponseEntity<String> helloUser(){
+		return new ResponseEntity<String>("Hello, I'm ready", HttpStatus.ACCEPTED);
+	}
+
+
 	@GetMapping("/user_by_name/{name}")
 	public ResponseEntity<List<User>> getUsersByName(@PathVariable String name){
 		return new ResponseEntity<List<User>>(userService.getUserByName(name), HttpStatus.ACCEPTED);
